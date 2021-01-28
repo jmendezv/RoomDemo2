@@ -3,6 +3,11 @@ package cat.copernic.roomdemo1
 import androidx.annotation.WorkerThread
 import kotlinx.coroutines.flow.Flow
 
+// The repository is not part of the Architecture Components libraries, but is a suggested best
+// practice for code separation and architecture.
+// A Repository manages queries and allows you to use multiple backends.
+// In the most common example, the Repository implements the logic for deciding whether to fetch
+// data from a network or use results cached in a local database.
 // Declares the DAO as a private property in the constructor. Pass in the DAO
 // instead of the whole database, because you only need access to the DAO
 
