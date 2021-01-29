@@ -13,7 +13,7 @@ import layout.WordListAdapter
 
 /*
 *
-* https://developer.android.com/codelabs/android-room-with-a-view-kotlin#8
+* https://developer.android.com/codelabs/android-room-with-a-view-kotlin#0
 *
 * */
 class MainActivity : AppCompatActivity() {
@@ -35,9 +35,10 @@ class MainActivity : AppCompatActivity() {
         // Add an observer on the LiveData returned by getAlphabetizedWords.
         // The onChanged() method fires when the observed data changes and the activity is
         // in the foreground.
-        wordViewModel.allWords.observe(this) { words ->
-            // Update the cached copy of the words in the adapter.
-            words.let { adapter.submitList(it) }
+        wordViewModel.allWords.observe(this) { words: List<Word> ->
+            // Update the cached copy of the words in the adapter (recyclerview).
+            words.let {
+                adapter.submitList(it) }
         }
 
         val fab = findViewById<FloatingActionButton>(R.id.fab)
